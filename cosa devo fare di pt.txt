@@ -1,0 +1,8 @@
+cosa devo fare di pt
+1. imposto pc con ip address, snm, gw
+2. imposto vlan su interfaccie tramite switch
+3. imposto interfaccia router come trunk su switch (con ADD)
+4. imposto sottointerfacce/interfaccia switch tramite router
+5. configuro interfaccie router con un /30 (punto punto)
+6. ripeto per altri eventuali rami
+7. creo le route per altre reti no collegate a un determinato router

@@ -1,0 +1,8 @@
+Non bisogna mai aggiugere alla routing table le reti direttamente collegate al router perchè loricava quando imposti le interfacce
+
+MODALITA: 
+	access -> fa passare i pacchetti di una sola sottorete
+	trunk -> fa passare tutti i pacchetti indipendentemente dalla VLAN
+
+Far comunicare più VLAN:
+1 interfaccia dello switch collegata al GW per ogni sottorete

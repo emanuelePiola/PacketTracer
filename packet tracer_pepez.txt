@@ -1,0 +1,72 @@
+SISTEMOZZI VLAN
+
+Metto i pc e swtich
+collego con straight trough
+metto interfacce cfe fast ethernte o cge gigabit a pc o switch
+metto ip address a pc e default gateway e subnet ai pc
+parto con la configurazione degli switch
+
+SWITCH PC
+Enable
+Conf t
+Interface fa0/1
+Switchport mode access
+Switchport access vlan 10
+exit
+
+lo faccio con ogni pc cambiando interface e lasciando varie vlan a dovere
+
+metto il router, spengo ricordando prima di fare copy running-config startup-config, riaccendo e faccio da switch e da router il tutto
+CONFIGURAZIONE ROUTER-SWITCH
+Ena
+Conf t
+interface gig0/0.10
+encapsulation dot1Q 10
+ip address 172.16.1.1 255.255.255.0
+No shutdown
+Xtutte le sottoreti cambiando il numero
+E infine po fare questo comando:
+Int gig0/0
+No shutdown
+
+Configurazione switch-router:
+Ena
+Conf t
+Int gig4/1
+switchport mode trunk
+switchport trunk allowed vlan none 
+switchport trunk allowed vlan add 10
+switchport trunk allowed vlan add 20
+switchport trunk allowed vlan add 30
+
+prova a vedere mandando ping da una rete all'altra
+
+
+
+rete tra 2 router
+CONFIGURAZIONE ROUTER-SWITCH
+Ena
+Conf t
+interface gig0/0.10
+encapsulation dot1Q 10
+ip address 172.16.1.1 255.255.255.0
+No shutdown
+Xtutte le sottoreti cambiando il numero
+E infine po fare questo comando:
+Int gig0/0
+No shutdown
+
+Configurazione rete router-router:
+ena
+conf t
+interface gig(quello da cui parte)
+ip address (rete e subnetmask rete)
+no shutdown
+exit
+exit
+
+CONFIGURAZIONE ROUTER/ROUTER
+
+enable
+conf t
+ip route (ip rete) (subnet) (interfaccia)
